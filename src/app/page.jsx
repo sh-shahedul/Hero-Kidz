@@ -1,0 +1,27 @@
+import Banner from "@/components/Home/Banner";
+import Products from "@/components/Home/Products";
+import ProductSkeleton from "@/components/skeleton/ProductSkeleton";
+import { Suspense } from "react";
+// import Image from "next/image";
+
+export default function Home() {
+  return (
+    <div className="md:space-y-15 space-y-5" >
+        <Banner></Banner>
+        {/* <Products></Products> */}
+         <Suspense
+          fallback={
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {[...Array(8)].map((_, i) => (
+                <ProductSkeleton key={i} />
+              ))}
+            </div>
+          }
+        >
+          <Products />
+        </Suspense>
+
+
+    </div>
+  );
+}
