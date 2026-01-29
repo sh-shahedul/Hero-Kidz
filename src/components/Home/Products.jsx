@@ -1,10 +1,9 @@
 import Image from "next/image";
-// import products from "@/data/toys.json";
 import ProductCard from "../Cards/ProductCard";
 import { getProducts } from "@/actions/server/product";
 
 const Products =async () => {
-    const products  = (await getProducts()) || []
+    const products  = await getProducts()
   return (
     <div className="container mx-auto px-4">
       {/* Heading */}

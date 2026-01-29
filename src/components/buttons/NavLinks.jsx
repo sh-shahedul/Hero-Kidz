@@ -8,7 +8,7 @@ const NavLinks = ({href,children}) => {
     
 
       const path = usePathname()
-const active  =   href === "/" ? path === "/" : path.startsWith(href)
+     const active  =   href === "/" ? path === "/" : path.startsWith(href)
 
 
 
